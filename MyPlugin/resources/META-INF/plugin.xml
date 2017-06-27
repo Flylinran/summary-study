@@ -1,35 +1,38 @@
 <idea-plugin>
-  <id>com.your.company.unique.plugin.id</id>
-  <name>Plugin display name here</name>
-  <version>1.0</version>
-  <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+    <id>com.your.company.unique.plugin.id</id>
+    <name>Plugin display name here</name>
+    <version>1.0</version>
+    <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
 
-  <description><![CDATA[
+    <description><![CDATA[
       Enter short description for your plugin here.<br>
       <em>most HTML tags may be used</em>
     ]]></description>
 
-  <change-notes><![CDATA[
+    <change-notes><![CDATA[
       Add change notes here.<br>
       <em>most HTML tags may be used</em>
     ]]>
-  </change-notes>
+    </change-notes>
 
-  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
-  <idea-version since-build="145.0"/>
+    <idea-version since-build="105.0"/>
 
-  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
-       on how to target different products -->
-  <!-- uncomment to enable plugin in all products
-  <depends>com.intellij.modules.lang</depends>
-  -->
+    <extensions defaultExtensionNs="com.intellij">
+    </extensions>
 
-  <extensions defaultExtensionNs="com.intellij">
-    <!-- Add your extensions here -->
-  </extensions>
-
-  <actions>
-    <!-- Add your actions here -->
-  </actions>
+    <actions>
+        <group id="MyPlugin.KeyMenu" text="_常用快捷键" description="idea常用快捷键">
+            <add-to-group group-id="MainMenu" anchor="last"/>
+            <action id="b" class="com.flylinran.plugin.KeyAction" text="最近文件">
+                <keyboard-shortcut first-keystroke="ctrl e" keymap="$default"/>
+            </action>
+            <action id="c" class="com.flylinran.plugin.KeyAction" text="显示当前文件结构">
+                <keyboard-shortcut first-keystroke="ctrl F12" keymap="$default"/>
+            </action>
+            <action id="d" class="com.flylinran.plugin.KeyAction" text="替换文本">
+                <keyboard-shortcut first-keystroke="ctrl r" keymap="$default"/>
+            </action>
+        </group>
+    </actions>
 
 </idea-plugin>
