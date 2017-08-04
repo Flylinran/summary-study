@@ -12,6 +12,7 @@
         <module>junit-study</module>
         <module>testNG-study</module>
         <module>java8-study</module>
+        <module>lombok</module>
     </modules>
 
     <dependencies>
